@@ -1,5 +1,5 @@
 <!-- login.component.html -->
-
+<div *ngIf="!userLoginOn">
 <form [formGroup]="loginForm">
     <p class="text-danger">{{loginError}}</p>
     <div class="mb-3">
@@ -27,4 +27,4 @@
     </div>
     <button type="submit" (click)="login()" class="btn btn-primary">Iniciar Sesión</button>
 </form>
-  
+</div>

@@ -11,18 +11,24 @@ import { JwtInterceptorService } from './services/Auth/jwt-interceptor.service';
 import { ErrorInterceptorService } from './services/Auth/error-interceptor.service';
 import { NavComponent } from './shared/nav/nav.component';
 import { MiembroComponent } from './miembro/miembro.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { MenubarModule } from 'primeng/menubar';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     MenuComponent,
-    MiembroComponent
+    MiembroComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    MenubarModule,
+    CardModule,
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptorService,multi:true},

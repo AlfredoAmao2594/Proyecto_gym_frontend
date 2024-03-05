@@ -11,7 +11,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  userLoginOn:boolean=false;
   loginError:string="";
   loginForm=this.formBuilder.group({
     username:['',[Validators.required,Validators.email]],
@@ -21,10 +21,19 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder:FormBuilder,
     private router:Router, 
-    private loginService: LoginService
-    ) { }
+    private loginService: LoginService,
+    private authService: AuthService
+    ) { 
+    }
 
     ngOnInit(): void {
+      this.loginService.currentUserLoginOn.subscribe(
+        {
+          next:(userLoginOn) => {
+            this.userLoginOn=userLoginOn;
+          }
+        }
+      )
     }
 
     get email(){
