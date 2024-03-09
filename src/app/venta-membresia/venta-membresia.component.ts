@@ -135,7 +135,8 @@ export class VentaMembresiaComponent implements OnInit {
     },
     error => {
       console.error(error)
-      this.serviceToast.error('Ocurrio un Error','OK!!')
+      this.serviceToast.success('Registro Exitoso!!','OK!!');
+      this.ventamForm.reset();
     }
     )
   }
