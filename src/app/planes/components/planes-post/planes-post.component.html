@@ -1,0 +1,38 @@
+<div class="container" style=" min-height: 520px;">
+  <h3 class="text-center mt-4 mb-4"> Registrar Plan de Membresía</h3>
+  <form [formGroup]="postplanform" (ngSubmit)="createPlanes()">
+      <div class="row align-items-start">
+          <div class="col"></div>
+
+          <div class="col">
+              <div class="row">
+                  <div class="col-12 mb-2">
+                      <label class="label-control" for="nombreplan">Plan de membresía</label>
+                      <input type="text" class="form-control" formControlName="nombreplan" required/>
+                  </div>
+
+                  <div class="col-sm-5 col-md-6">
+                      <label class="label-control" for="tiempo">Duración</label>
+                      <input type="text" class="form-control" formControlName="tiempo" required/>
+                  </div>
+                  <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                      <label class="label-control" for="diaMes">Tiempo</label>
+                      <select class="form-select" formControlName="diaMes" required>
+                        <option value="Día">Dia</option>
+                        <option value="Mes">Mes</option>
+                      </select>
+                  </div>
+
+                  <div class="col-6 mb-3 mt-2">
+                      <label class="label-control" for="precio">Precio (S/.)</label>
+                      <input type="number" class="form-control" formControlName="precio" required/>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-warning">Registrar</button>
+              <a routerLink="/Planesget" class="btn btn-outline-warning">Ver Listado</a>
+          </div>
+          <div class="col"></div>
+      </div>
+
+  </form>
+</div>

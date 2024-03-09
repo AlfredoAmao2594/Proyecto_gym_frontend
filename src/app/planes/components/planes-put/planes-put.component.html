@@ -1,0 +1,44 @@
+<div class="container" style=" min-height: 520px;">
+
+  <h3 class="text-center mt-4 mb-4"> Actualizar Plan de Membresía</h3>
+  <form form [formGroup]="putplanform" (ngSubmit)="updatePlanes()">
+    <div class="row align-items-start">
+      <div class="col"></div>
+
+      <div class="col">
+        <div class="row">
+          <div class="col-4 mb-2">
+            <input type="text" class="form-control" formControlName="planesId" required/>
+          </div>
+          <div class="col-12 mb-2">
+            <label class="label-control">Plan de membresía</label>
+            <input type="text" class="form-control" formControlName="nombreplan" required/>
+          </div>
+
+          <div class="col-sm-5 col-md-6">
+            <label class="label-control">Duración</label>
+            <input type="text" class="form-control" formControlName="tiempo" required/>
+          </div>
+          <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+            <label class="label-control">Tiempo</label>
+            <select class="form-select" formControlName="diaMes" required>
+              <option value="0">Seleccione...</option>
+              <option value="Día">Dia</option>
+              <option value="Mes">Mes</option>
+            </select>
+          </div>
+          <div class="col-5 mb-3 mt-2">
+            <label class="label-control">Precio (S/.)</label>
+            <input type="number" class="form-control" formControlName="precio" required/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-warning">Actualizar</button>
+        <a routerLink="/Planesget" class="btn btn-outline-warning">Ver Listado</a>
+      </div>
+      <div class="col"></div>
+    </div>
+
+
+
+  </form>
+</div>

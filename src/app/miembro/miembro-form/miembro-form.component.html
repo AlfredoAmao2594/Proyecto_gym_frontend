@@ -1,0 +1,71 @@
+<app-barra></app-barra>
+<div class="container" style="min-height: 520px;">
+    <h3 class="text-center mt-4 mb-4">Registrar Nuevo Miembro</h3>
+    <form  [formGroup]="postmiembroform" (ngSubmit)="createMiembro()">
+      <div class="row" style="place-content: center;">
+        <div class="col-sm-8">
+          <div class="row">
+            <!-- Campos de Angular -->
+            <div class="col-5 mb-3">
+              <label class="label-control" for="nombre">Nombre(s)</label>
+              <input type="text" class="form-control" formControlName="nombre" placeholder="Ingrese su Nombre" required />
+            </div>
+  
+            <div class="col-5 mb-3">
+              <label class="label-control" for="apellido">Apellido(s)</label>
+              <input type="text" class="form-control" formControlName="apellido" placeholder="Ingrese sus apellido" required />
+            </div>
+  
+            <div class="col-2 mb-3">
+              <label class="label-control" for="edad">Edad</label>
+              <input type="number" class="form-control" formControlName="edad" min="0" required />
+            </div>
+  
+            <div class="col-5 mb-3">
+              <label class="label-control" for="correoelectronico">Correo Electronico</label>
+              <input type="text" class="form-control" formControlName="correoelectronico" placeholder="Ingrese su correo" required />
+            </div>
+  
+            <div class="col-4 mb-3">
+              <label class="label-control" for="celular">Celular</label>
+              <input type="text" class="form-control" formControlName="celular" placeholder="Ingrese su Telefono" required />
+            </div>
+  
+            <div class="col-3 mb-3">
+              <label class="label-control" for="sexo">Sexo</label>
+              <select class="form-select" formControlName="sexo" required>
+                <option value="">Seleccione</option>
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="B">Binario</option>
+              </select>
+            </div>
+  
+            <div class="col-5 mb-3">
+              <label class="label-control" for="tipodocumento">Tipo de Documento</label>
+              <select class="form-select" formControlName="tipodocumento" required>
+                <option value="">Seleccione...</option>
+                <option [value]="item.tipodocumento_id" *ngFor="let item of listdocuments">{{item.descripcion}}</option>
+              </select>
+            </div>
+  
+            <div class="col-7 mb-3">
+              <label class="label-control" for="nrodoc">Número de Documento</label>
+              <input type="number" class="form-control" formControlName="nrodoc" style="width: 55.3%;" placeholder="Ingrese su Documento" required />
+            </div>
+  
+            <div class="col-9 mb-3">
+              <label class="label-control" for="razonsocial">Razón Social (*Sólo si el tipo de documento es RUC)</label>
+              <input type="text" class="form-control" formControlName="razonsocial" placeholder="Ingrese su Razon Social" />
+            </div>
+  
+            <div class="col-12">
+              <button type="submit" class="btn btn-warning mt-4">Registrar</button>
+              <a  class="btn btn-secondary mx-3 mt-4" (click)="close()">Regresar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
