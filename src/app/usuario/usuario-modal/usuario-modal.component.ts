@@ -96,10 +96,7 @@ export class UsuarioModalComponent implements OnInit {
         username: this.userForm.value.username,
         password: this.userForm.value.password,
       };
-    }
-console.log(info);
-
-    
+    }  
   
     if(this.data.usuarioId== undefined){
       this.serviceUser.create(info)
