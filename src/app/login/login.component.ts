@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { LoginDto, LoginRequest } from './dto/login.dto';
 import { LoginService } from '../services/Auth/login.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { SingupComponent } from './singup/singup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +24,8 @@ export class LoginComponent implements OnInit {
     private formBuilder:FormBuilder,
     private router:Router, 
     private loginService: LoginService,
-    private authService: AuthService
+    private authService: AuthService,
+    public dialog: MatDialog
     ) { 
     }
 
@@ -68,6 +71,20 @@ export class LoginComponent implements OnInit {
         this.loginForm.markAllAsTouched();
         alert("Error al ingresar los datos.");
       }
+    }
+
+    signup():void{
+      const dialogRef = this.dialog.open(SingupComponent, {
+        width: '400px',
+
+      });
+
+      
+    
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('El diálogo fue cerrado');
+
+      });
     }
   
 

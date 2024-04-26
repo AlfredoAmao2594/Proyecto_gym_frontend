@@ -19,7 +19,7 @@ export class MiembroComponent implements OnInit {
   currentIndex = -1;
   nombremiembro ='';
 
-  submitted =false;
+    submitted =false;
 
   constructor(private miembroService: MiembroService,
     private toast: ToastrService,

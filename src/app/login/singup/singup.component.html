@@ -1,0 +1,63 @@
+<div class="container" style="min-height: 520px;">
+    <h3 class="text-center mt-4 mb-4">Registrar Nuevo Miembro</h3>
+    <form  [formGroup]="userForm" (ngSubmit)="signup()">
+      <div class="row" style="place-content: center;">
+        <div class="col-8">
+          <div class="row">
+            <!-- Campos de Angular -->
+            <div class="mb-3">
+              <label class="label-control" for="nombre">Nombre(s)</label>
+              <input type="text" class="form-control" formControlName="nombre" placeholder="Ingrese su Nombre" 
+              [ngClass]="{ 'is-invalid': submitted && userForm.get('nombre')?.invalid && userForm.get('nombre')?.touched,
+               'is-valid': submitted && userForm.get('nombre')?.valid && userForm.get('nombre')?.touched }" required />
+              <div *ngIf=" submitted && userForm.get('nombre')?.hasError('required')" class="text-danger">
+                Nombre es requerido
+              </div>
+            </div>
+            <div class="mb-3">
+                <label class="label-control" for="apellido">Apellido(s)</label>
+                <input type="text" class="form-control" formControlName="apellido" placeholder="Ingrese sus apellido"
+                [ngClass]="{ 'is-invalid': submitted && userForm.get('apellido')?.invalid && userForm.get('apellido')?.touched,
+               'is-valid': submitted && userForm.get('apellido')?.valid && userForm.get('apellido')?.touched }" required />
+               <div *ngIf="submitted &&   userForm.get('apellido')?.hasError('required')" class="text-danger">
+                Apellido es requerido
+              </div>
+            </div>     
+            <div class="mb-3">
+              <label class="label-control" for="email">Email</label>
+              <input type="text" class="form-control" formControlName="email" placeholder="Ingrese su correo" 
+              [ngClass]="{ 'is-invalid': submitted && userForm.get('email')?.invalid && userForm.get('email')?.touched,
+               'is-valid': submitted && userForm.get('email')?.valid && userForm.get('email')?.touched }"required />
+               <div *ngIf="submitted && userForm.get('email')?.hasError('required')" class="text-danger">
+                Email es requerido
+              </div>
+            </div>
+            <div class="mb-3">
+                <label class="label-control" for="username">Username</label>
+                <input type="text" class="form-control" formControlName="username" placeholder="Ingrese un Username"
+                [ngClass]="{ 'is-invalid': submitted && userForm.get('username')?.invalid && userForm.get('username')?.touched,
+               'is-valid': submitted && userForm.get('username')?.valid && userForm.get('username')?.touched }" required />
+            <div *ngIf="submitted && userForm.get('username')?.hasError('required')" class="text-danger">
+              Usuario es requerido
+            </div>  
+          </div>
+            <div class="mb-3">
+                <label class="label-control" for="password">Password</label>
+                <input type="text" class="form-control" formControlName="password" placeholder="Ingrese un Password"
+                [ngClass]="{ 'is-invalid': submitted && userForm.get('password')?.invalid && userForm.get('password')?.touched,
+               'is-valid': submitted && userForm.get('password')?.valid && userForm.get('password')?.touched }" required />
+               <div *ngIf="submitted && userForm.get('password')?.hasError('required')" class="text-danger">
+                Contraseña es requerido
+              </div>  
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-warning mt-4" >Registrar</button>
+              <a  class="btn btn-secondary mx-4 mt-4" (click)="close()" >Regresar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+

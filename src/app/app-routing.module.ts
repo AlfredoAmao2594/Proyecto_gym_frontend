@@ -11,6 +11,7 @@ import { ConsultasPlanesComponent } from './consultas-planes/consultas-planes.co
 import { PlanesPostComponent } from './planes/components/planes-post/planes-post.component';
 import { PlanesGetComponent } from './planes/components/planes-get/planes-get.component';
 import { PlanesPutComponent } from './planes/components/planes-put/planes-put.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirige a la página de inicio de sesión por defecto
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'consulta-p', component: ConsultasPlanesComponent ,canActivate: [AuthGuardService]},
   { path: 'planespost', component: PlanesPostComponent,canActivate: [AuthGuardService]},
   { path: 'Planesget', component: PlanesGetComponent,canActivate: [AuthGuardService]},
-  { path: 'planesput', component: PlanesPutComponent,canActivate: [AuthGuardService]}
+  { path: 'planesput', component: PlanesPutComponent,canActivate: [AuthGuardService]},
+  { path: 'usuarios', component: UsuarioComponent,canActivate: [AuthGuardService]}
 ];
 
 @NgModule({

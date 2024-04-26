@@ -56,4 +56,8 @@ export class LoginService {
   get userToken():String{
     return this.currentUserData.value;
   }
+
+  singup(request:LoginRequest):Observable<any>{
+    return this.http.post<any>(environment.urlHost+"auth/register", request);
+  }
 }

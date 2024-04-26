@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { LoginModule } from './login/login.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptorService } from './services/Auth/jwt-interceptor.service';
 import { ErrorInterceptorService } from './services/Auth/error-interceptor.service';
 import { NavComponent } from './shared/nav/nav.component';
@@ -26,6 +26,8 @@ import { PlanesGetComponent } from './planes/components/planes-get/planes-get.co
 import { PlanesPutComponent } from './planes/components/planes-put/planes-put.component';
 import { MiembroModule } from './miembro/miembro.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioModule } from './usuario/usuario.module';
 
 
 
@@ -41,7 +43,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     PlanesComponent,
     PlanesPostComponent,
     PlanesGetComponent,
-    PlanesPutComponent,
+    PlanesPutComponent
    
   ],
   imports: [
@@ -55,7 +57,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     ToastrModule.forRoot(), // ToastrModule added
     BrowserAnimationsModule,
     MiembroModule,
-    MatDialogModule
+    MatDialogModule,
+    UsuarioModule,
+    HttpClientModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptorService,multi:true},

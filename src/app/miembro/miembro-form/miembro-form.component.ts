@@ -70,8 +70,10 @@ console.log('.-----2----')
     )
   }
 
+
   createMiembro(): void {
 
+    this.submitted = true;
     if (!this.data) {
       this.data = {}; // Inicializar this.data si no está definido
     }
@@ -104,8 +106,7 @@ console.log('.-----2----')
         razonsocial: this.postmiembroform.value.razonsocial
       };
     }
-  
-    console.log(data);
+
     if(this.data.miembroId== undefined){
       this.miembroService.create(data)
       .subscribe({
