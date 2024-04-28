@@ -28,6 +28,7 @@ import { MiembroModule } from './miembro/miembro.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioModule } from './usuario/usuario.module';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 
 
@@ -43,7 +44,8 @@ import { UsuarioModule } from './usuario/usuario.module';
     PlanesComponent,
     PlanesPostComponent,
     PlanesGetComponent,
-    PlanesPutComponent
+    PlanesPutComponent,
+    ChatbotComponent
    
   ],
   imports: [

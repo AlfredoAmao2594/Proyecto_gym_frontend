@@ -12,6 +12,7 @@ import { PlanesPostComponent } from './planes/components/planes-post/planes-post
 import { PlanesGetComponent } from './planes/components/planes-get/planes-get.component';
 import { PlanesPutComponent } from './planes/components/planes-put/planes-put.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirige a la página de inicio de sesión por defecto
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'planespost', component: PlanesPostComponent,canActivate: [AuthGuardService]},
   { path: 'Planesget', component: PlanesGetComponent,canActivate: [AuthGuardService]},
   { path: 'planesput', component: PlanesPutComponent,canActivate: [AuthGuardService]},
-  { path: 'usuarios', component: UsuarioComponent,canActivate: [AuthGuardService]}
+  { path: 'usuarios', component: UsuarioComponent,canActivate: [AuthGuardService]},
+  { path: '', component: ChatbotComponent,canActivate: [AuthGuardService]}
 ];
 
 @NgModule({
